@@ -5,11 +5,14 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.gherkin.model.Scenario;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import utils.DriverManager;
+import utils.Screenshots;
 
-public class Hooks {
+public class Hooks{
 	static WebDriver driver;
 	static WebDriverWait wait;
 	
@@ -20,6 +23,7 @@ public class Hooks {
 	}
 	@After
 	public void tearDown() {
+		
 		driver.quit();
 	}
 	
