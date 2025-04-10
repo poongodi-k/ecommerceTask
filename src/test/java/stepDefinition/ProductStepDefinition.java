@@ -9,12 +9,25 @@ import pages.ProductPage;
 import utils.ConfigReader;
 
 public class ProductStepDefinition {
-	WebDriver driver;
+	WebDriver driver = Hooks.driver;
 	ProductPage product;
 	
-	@Given("user add product to the cart")
+	@Then("user add product to the cart")
 	public void userAddProductToTheCart() throws InterruptedException {
+		product = new ProductPage(driver, Hooks.wait);
 		product.clickAddToCartButton();
+
+	}
+	
+	@Then("user click cart container button")
+	public void userClickCartContainerButton() throws InterruptedException {
+	    product.clickCartContainer();
+	}
+	@Then("user click checkout button")
+	public void userClickCheckoutButton() throws InterruptedException {
+		product.clickCheckoutBtn();
 	   
 	}
+
+
 }
