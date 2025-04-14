@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.LoginPage;
@@ -48,6 +49,7 @@ public class LoginStepDefinition {
 		login.sendPassword("poo1235");
 	    
 	}
+	
 	@Then("click login button")
 	public void clickLoginButton() throws InterruptedException {
 		
@@ -68,4 +70,22 @@ public class LoginStepDefinition {
 		
 
 }
+	
+	@Then("user enter the name {string}")
+	public void userEnterTheName(String username) throws InterruptedException {
+		Thread.sleep(2000);
+		login.sendUserName(username);
+	}
+
+	@And("user enter the pwd {string}")
+	public void userEnterThePwd(String password) throws InterruptedException {
+		Thread.sleep(2000);
+		login.sendPassword(password);
+	}
+	@Then("click submit button")
+	public void clickSubmitButton() throws InterruptedException {
+	    login.clickSubmitBtn();
+	    Thread.sleep(2000);
+	}
+
 }

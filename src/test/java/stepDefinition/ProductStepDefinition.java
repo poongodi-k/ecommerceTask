@@ -26,6 +26,7 @@ public class ProductStepDefinition {
 	@Then("user click checkout button")
 	public void userClickCheckoutButton() throws InterruptedException {
 		product.clickCheckoutBtn();
+		Thread.sleep(2000);
 	   
 	}
 
